@@ -8,7 +8,7 @@ FORK from unmaintained https://github.com/dundalek/latinize
 ## Install
 
 ```
-npm install latinize
+npm install latinize-to-ascii
 ```
 
 ## Usage
@@ -39,7 +39,7 @@ browser
 
 ESM / MJS / ES6+ / Javascript Module
 
-```ecmascript 6
+```javascript
 import latinize from 'dist/latinize.mjs';
 latinize('ỆᶍǍᶆṔƚÉ áéíóúýčďěňřšťžů'); // => 'ExAmPlE aeiouycdenrstzu'
 ```
