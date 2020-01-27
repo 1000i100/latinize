@@ -1,11 +1,5 @@
 {
-  "name": "latinize-to-ascii",
-  "version": "0.5.0",
-  "description": "Simple library to convert accents (diacritics) from strings to latin characters.",
-  "main": "dist/latinize.min.js",
-  "directories": {
-    "example": "examples"
-  },
+  "private": true,
   "scripts": {
     "postinstall": "run-s build",
     "build": "run-s compat minify",
@@ -23,26 +17,13 @@
     "minify:iife": "uglifyjs dist/latinize.iife.js > dist/latinize.iife.min.js",
     "minify:amd": "uglifyjs dist/latinize.amd.js > dist/latinize.amd.min.js",
     "minify:cjs": "uglifyjs dist/latinize.cjs > dist/latinize.cjs.min.js",
+    "publish": "run-s build publish:*",
+    "publish:addPackage.json": "cp npm-package.json dist/package.json",
+    "publish:npm": "cd dist && npm publish",
+
+
     "test": "mocha test/test.js"
   },
-  "repository": {
-    "type": "git",
-    "url": "http://github.com/1000i100/latinize.git"
-  },
-  "homepage": "http://github.com/1000i100/latinize",
-  "author": {
-    "name": "[1000i100] Millicent Billette",
-    "email": "git@1000i100.fr",
-    "url": "https://1forma-tic.fr/"
-  },
-  "license": "UNLICENSED",
-  "keywords": [
-    "string",
-    "latinize",
-    "latinise",
-    "accents",
-    "diacritics"
-  ],
   "devDependencies": {
     "mocha": "^7.0.1",
     "npm-run-all": "^4.1.5",
