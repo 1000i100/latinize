@@ -3,7 +3,7 @@ var assert = require("assert");
 describe('latinize', function() {
 	var latinize;
   	it('should be successfully initialized', function() {
-    	latinize = require('../latinize.js');
+    	latinize = require('../dist/latinize.js');
   	});
 
    	it('should pass through simple word', function() {

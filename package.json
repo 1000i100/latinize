@@ -1,22 +1,41 @@
 {
   "name": "latinize",
-  "version": "0.4.0",
+  "version": "0.5.0",
   "description": "Simple library to convert accents (diacritics) from strings to latin characters.",
-  "main": "latinize.js",
+  "main": "dist/latinize.min.js",
   "directories": {
     "example": "examples"
   },
-  "scripts": {    
-    "minify": "uglifyjs latinize.js > latinize.min.js",
-    "test": "mocha test/test.js"    
+  "scripts": {
+    "postinstall": "run-s build",
+    "build": "run-s compat minify",
+    "compat": "run-p compat:*",
+    "compat:umd": "rollup src/latinize.esm.mjs --format umd --file dist/latinize.umd.js --name latinize",
+    "compat:mostCase": "rollup src/latinize.esm.mjs --format umd --file dist/latinize.js --name latinize",
+    "compat:iife": "rollup src/latinize.esm.mjs --format iife --file dist/latinize.iife.js --name latinize",
+    "compat:amd": "rollup src/latinize.esm.mjs --format amd --file dist/latinize.amd.js",
+    "compat:cjs": "rollup src/latinize.esm.mjs --format cjs --file dist/latinize.cjs",
+    "compat:nodejs": "rollup src/latinize.esm.mjs --format cjs --file dist/latinize.cjs.js",
+    "compat:mjs": "rollup src/latinize.esm.mjs --format esm --file dist/latinize.mjs",
+    "compat:esm": "rollup src/latinize.esm.mjs --format esm --file dist/latinize.esm.js",
+    "minify": "run-p minify:*",
+    "minify:umd": "uglifyjs dist/latinize.umd.js > dist/latinize.min.js",
+    "minify:iife": "uglifyjs dist/latinize.iife.js > dist/latinize.iife.min.js",
+    "minify:amd": "uglifyjs dist/latinize.amd.js > dist/latinize.amd.min.js",
+    "minify:cjs": "uglifyjs dist/latinize.cjs > dist/latinize.cjs.min.js",
+    "test": "mocha test/test.js"
   },
   "repository": {
     "type": "git",
-    "url": "http://github.com/dundalek/latinize.git"
+    "url": "http://github.com/1000i100/latinize.git"
   },
-  "homepage": "http://github.com/dundalek/latinize",
-  "author": "Jakub Dundalek <dundalek@gmail.com> (http://dundalek.com/)",
-  "license": "BSD",
+  "homepage": "http://github.com/1000i100/latinize",
+  "author": {
+    "name": "[1000i100] Millicent Billette",
+    "email": "git@1000i100.fr",
+    "url": "https://1forma-tic.fr/"
+  },
+  "license": "UNLICENSED",
   "keywords": [
     "string",
     "latinize",
@@ -24,8 +43,10 @@
     "accents",
     "diacritics"
   ],
-  "devDependencies": {       
-    "mocha": "^2.5.3",
-    "uglify-js": "^2.6.2"
+  "devDependencies": {
+    "mocha": "^7.0.1",
+    "npm-run-all": "^4.1.5",
+    "rollup": "^1.30.1",
+    "uglify-js": "^3.7.6"
   }
 }

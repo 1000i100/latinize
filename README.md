@@ -3,21 +3,17 @@
 
 Simple library to convert accents (diacritics) from strings to latin characters.
 
+FORK from unmaintained https://github.com/dundalek/latinize
+
 ## Install
 
 ```
 npm install latinize
 ```
 
-or
-
-```
-bower install latinize
-```
-
 ## Usage
 
-node.js
+node.js / CommonJS
 
 ```javascript
 var latinize = require('latinize');
@@ -35,11 +31,19 @@ require(['latinize'], function(latinize){
 browser
 
 ```html
-<script src="../latinize.js"></script>
+<script src="dist/latinize.min.js"></script>
 <script>
     document.write(latinize('ỆᶍǍᶆṔƚÉ áéíóúýčďěňřšťžů'));
 </script>
 ```
+
+ESM / MJS / ES6+ / Javascript Module
+
+```ecmascript 6
+import latinize from 'dist/latinize.mjs';
+latinize('ỆᶍǍᶆṔƚÉ áéíóúýčďěňřšťžů'); // => 'ExAmPlE aeiouycdenrstzu'
+```
+
 
 You can use the `latinize.characters` object to access the translation table or to change the mapping:
 
