@@ -1,5 +1,5 @@
 {
-  "name": "latinize",
+  "name": "latinize-to-ascii",
   "version": "0.5.0",
   "description": "Simple library to convert accents (diacritics) from strings to latin characters.",
   "main": "dist/latinize.min.js",
