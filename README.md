@@ -1,4 +1,4 @@
-
+[![release](https://img.shields.io/npm/v/latinize-to-ascii.svg)](https://www.npmjs.com/package/latinize-to-ascii)
 # Latinize.js
 
 Simple library to convert accents (diacritics) from strings to latin characters.
