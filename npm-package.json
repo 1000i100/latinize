@@ -1,19 +1,19 @@
 {
   "name": "latinize-to-ascii",
-  "version": "0.5.1",
+  "version": "0.5.2",
   "description": "Simple library to convert accents (diacritics) from strings to latin characters.",
   "main": "latinize.min.js",
   "repository": {
     "type": "git",
-    "url": "http://github.com/1000i100/latinize.git"
+    "url": "http://github.com/1000i100/latinize-to-ascii.git"
   },
-  "homepage": "http://github.com/1000i100/latinize",
+  "homepage": "http://github.com/1000i100/latinize-to-ascii",
   "author": {
     "name": "[1000i100] Millicent Billette",
     "email": "git@1000i100.fr",
     "url": "https://1forma-tic.fr/"
   },
-  "license": "UNLICENSED",
+  "license": "BSD",
   "keywords": [
     "string",
     "latinize",
